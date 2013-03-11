@@ -1,0 +1,35 @@
+$btnPrimaryBackground: purple;
+
+/* To change the font
+@import url(http://fonts.googleapis.com/css?family=Molle:400italic);
+
+.brand {
+	font-family: 'Molle', cursive;
+} 
+
+To Change the navbar
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+*/
+
+@import 'bootstrap';
+
+body {
+	padding-top: 45px;
+}
+
+@import 'bootstrap-responsive';
+
+/*Pour modifier le trait sous navbar*/
+.navbar-inner {
+	@include box-shadow (none !important);
+	/*borer: 0;*/
+}
+
+.footer {
+	margin-top: 50px;
+	color: $gray;
+	a {
+		color: $grayLight;
+	}
+}
