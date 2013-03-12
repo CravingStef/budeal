@@ -1,3 +1,9 @@
+<% if user_signed_in? %>
+
+<h1>Budeal - Alpha</h1>
+
+<% else %>
+
 <div class="center hero-unit">
 	<h1>Budeal - Alpha</h1>
 	<p>
@@ -7,6 +13,8 @@
 	</p>
 	<p>
 		Be among the very first users:
-		</br><a href="http://budeal.com" class= "btn btn-primary btn-large"> Sign Up Now ! </a>
+		<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %> 
 	</p>
 </div>
+
+<% end %>
