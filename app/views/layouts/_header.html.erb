@@ -23,11 +23,30 @@
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
            <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
+            <!-- Button to trigger modal -->
+            <li><a href="#myModal"  data-toggle="modal">Login</a></li>
            <% end %>
     		</ul>
       </div>
- 
     </div>
+  </div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Log in to your account</h3>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+          <div class="inputs">
+            <%= f.input :email, :required => false, :autofocus => true %>
+            <%= f.input :password, :required => false %>
+            <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+          </div>
+  </div>
+  <div class="modal-footer">
+            <%= f.button :submit, "Sign in", :class => 'btn btn-primary'%>
+        <% end %>
   </div>
 </div>
