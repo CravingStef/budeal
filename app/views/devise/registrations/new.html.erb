@@ -10,7 +10,6 @@
 
   <div class="form-actions">
   	<%= f.submit "Sign up", class: "btn btn-primary" %>
+  	<%= link_to "Already have an account ? Sign in", new_session_path(resource_name), class: 'btn' %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
