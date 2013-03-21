@@ -46,7 +46,7 @@
           </div>
   </div>
   <div class="modal-footer">
-            <%= f.button :submit, "Sign in", :class => 'btn btn-primary'%>
+            <%= link_to "Don't have an account yet ?", new_registration_path(resource_name), :class => 'btn pull-left' %><%= f.button :submit, "Sign in", :class => 'btn btn-primary'%>
         <% end %>
   </div>
 </div>
