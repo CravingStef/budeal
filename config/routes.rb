@@ -4,6 +4,8 @@ Budeal::Application.routes.draw do
 
   devise_for :users
 
+  get 'profile' => 'pages#profile'
+
   get 'about' => 'pages#about'
 
   root :to => 'pages#home'
