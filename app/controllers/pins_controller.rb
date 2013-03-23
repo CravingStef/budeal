@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-#before_filter :authenticate_user!, except: [:index, :show]
+before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /pins
   # GET /pins.json
@@ -74,8 +74,7 @@ class PinsController < ApplicationController
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
-    #@pin = current_user.pins.find(params[:id])
-    @pin = Pin.find(params[:id])
+    @pin = current_user.pins.find(params[:id])
     @pin.destroy
 
     respond_to do |format|
