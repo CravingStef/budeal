@@ -1,9 +1,17 @@
-<tr>
-  <td><%= link_to image_tag(pin.image(:thumb)), pin %></td>
-  <td><%= pin.description %></td>
-  <td><%= pin.price %> Euros </td>
-  <% if current_user == pin.user %>
-	  <td><%= link_to 'Edit', edit_pin_path(pin), class: "btn" %></td>
-	  <td><%= link_to 'Delete', pin, class: "btn btn-danger btn-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<% end %>
-</tr>
+<div class="box">
+	<%= link_to image_tag(pin.image(:medium)), pin %>
+	<p class="description">
+		<%= pin.description %>
+	</p>
+	<p>
+		<strong>
+			Proposed by <%= pin.user.name %> for <%= pin.price %> Euros 
+		</strong>
+	</p>
+	  <% if current_user == pin.user %>
+	  <div>
+		  <%= link_to 'Edit', edit_pin_path(pin), class: "btn" %>
+			<%= link_to 'Delete', pin, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+		<% end %>
+</div>
