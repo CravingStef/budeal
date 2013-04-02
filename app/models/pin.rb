@@ -9,5 +9,6 @@ class Pin < ActiveRecord::Base
 											size: { less_than: 5.megabytes}
   
   belongs_to :user
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :original => '5000x5000>', :medium => "300x300>", :thumb => "100x100>" },
+  									:convert_options => { :all => '-auto-orient' }
 end
