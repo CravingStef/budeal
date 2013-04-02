@@ -6,7 +6,7 @@
 			  <%= @pin.description %> - 
 			 </p>
 			 <p>
-			 	Proposed by <%= @pin.user.name %>
+			 	Proposed by <%= link_to @pin.user.name, @pin.user %> 
 			  for <%= @pin.price %> Euros
 			</p>
 			<% if current_user == @pin.user %>

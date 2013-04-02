@@ -5,11 +5,11 @@
 	</p>
 	<p>
 		<strong>
-			Proposed by <%= pin.user.name %> for <%= pin.price %> Euros 
+			Proposed by <%= link_to pin.user.name, pin.user %> for <%= pin.price %> Euros 
 		</strong>
 	</p>
 	  <% if current_user == pin.user %>
-	  <div>
+	  <div class="text-center">
 		  <%= link_to 'Edit', edit_pin_path(pin), class: "btn" %>
 			<%= link_to 'Delete', pin, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
