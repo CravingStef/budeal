@@ -20,8 +20,6 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy?  <%= link_to "Cancel my account", registration_path(resource_name),class: "btn btn-mini btn-danger", :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<p><%= link_to "Cancel my account", registration_path(resource_name),class: "btn btn-mini btn-danger", :data => { :confirm => "Are you sure that you really want to delete your accoun?" }, :method => :delete %></p>
 
 
