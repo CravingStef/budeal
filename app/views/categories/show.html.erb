@@ -1,0 +1,9 @@
+<h1>Pins in <%= @category.name %> category </h1>
+
+<div id="pins">
+  <%= render @pins %>
+</div>
+</br>
+
+<%= will_paginate @pins %>
+<%= page_entries_info @pins %>

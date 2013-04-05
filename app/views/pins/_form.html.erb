@@ -9,6 +9,7 @@
    <%= f.input_field :price, :class => "input-mini" %>
     <%= content_tag :span, "€", :class => "add-on abbn" %>
    <% end %>
+  <%= f.association :category, :include_blank => false %>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>

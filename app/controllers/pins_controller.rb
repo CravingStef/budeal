@@ -1,5 +1,6 @@
 class PinsController < ApplicationController
 before_filter :authenticate_user!, except: [:index, :show]
+before_filter :prepare_categories
 
   # GET /pins
   # GET /pins.json
@@ -82,4 +83,10 @@ before_filter :authenticate_user!, except: [:index, :show]
       format.json { head :no_content }
     end
   end
+
+private
+    def prepare_categories
+      @categories = Category.all
+    end
+
 end

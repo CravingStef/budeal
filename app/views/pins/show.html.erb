@@ -8,6 +8,8 @@
 			 <p>
 			 	Proposed by <%= link_to @pin.user.name, @pin.user %> 
 			  for <%= @pin.price %> Euros
+				</br>
+				<%= link_to @pin.category.name, @pin.category %>
 			</p>
 			<% if current_user == @pin.user %>
 				<%= link_to 'Edit', edit_pin_path(@pin), class: "btn" %>
