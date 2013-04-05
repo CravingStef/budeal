@@ -1,11 +1,9 @@
 Budeal::Application.routes.draw do
   resources :categories
 
-
   get "users/show"
 
   resources :pins
-
 
   devise_for :users
   match 'users/:id' => 'users#show', as: :user
